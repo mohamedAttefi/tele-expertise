@@ -72,7 +72,7 @@ public class ConsultationServlet extends HttpServlet {
 
         response.sendRedirect(
                 request.getContextPath()
-                        + "/demander-expertise?consultationId="
+                        + "/demande-expertise?consultationId="
                         + consultation.getId()
         );
     }
