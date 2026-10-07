@@ -8,6 +8,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import ma.teleexpertise.dao.CreneauDAO;
 import ma.teleexpertise.model.Creneau;
+import ma.teleexpertise.model.Specialite;
 
 import java.io.IOException;
 import java.util.List;
@@ -33,12 +34,18 @@ public class ChoisirCreneauServlet extends HttpServlet {
         Long consultationId =
                 Long.parseLong(request.getParameter("consultationId"));
 
+        Specialite specialite =
+                Specialite.valueOf(
+                        request.getParameter("specialite")
+                );
+
         List<Creneau> creneaux =
                 creneauDAO.trouverDisponibles(specialisteId);
 
         request.setAttribute("creneaux", creneaux);
         request.setAttribute("specialisteId", specialisteId);
         request.setAttribute("consultationId", consultationId);
+        request.setAttribute("specialite", specialite);
 
         request.getRequestDispatcher(
                 "/jsp/choisir-creneau.jsp"
@@ -51,17 +58,41 @@ public class ChoisirCreneauServlet extends HttpServlet {
             throws ServletException, IOException {
 
         Long consultationId =
-                Long.parseLong(request.getParameter("consultationId"));
+                Long.parseLong(
+                        request.getParameter("consultationId")
+                );
+
+        Specialite specialite =
+                Specialite.valueOf(
+                        request.getParameter("specialite")
+                );
 
         Long specialisteId =
-                Long.parseLong(request.getParameter("specialisteId"));
+                Long.parseLong(
+                        request.getParameter("specialisteId")
+                );
 
         Long creneauId =
-                Long.parseLong(request.getParameter("creneauId"));
+                Long.parseLong(
+                        request.getParameter("creneauId")
+                );
+
+        String question =
+                request.getParameter("question");
+
+        String donneesMedicales =
+                request.getParameter("donneesMedicales");
+
+        String analyses =
+                request.getParameter("analyses");
+
+        String priorite =
+                request.getParameter("priorite");
 
         request.setAttribute("consultationId", consultationId);
         request.setAttribute("specialisteId", specialisteId);
         request.setAttribute("creneauId", creneauId);
+        request.setAttribute("specialite", specialite);
 
         request.getRequestDispatcher(
                 "/jsp/demande-expertise.jsp"
