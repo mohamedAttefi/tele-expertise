@@ -42,6 +42,11 @@
            name="consultationId"
            value="<%= request.getAttribute("consultationId") %>">
 
+
+    <input type="hidden"
+           name="specialite"
+           value="<%= request.getAttribute("specialite") %>">
+
     <label>Créneau :</label>
 
     <select name="creneauId" required>

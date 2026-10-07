@@ -17,7 +17,7 @@
 
 <h1>Demander une expertise</h1>
 
-<form action="/tele_expertise_war/demander-expertise"
+<form action="/tele_expertise_war/demande-expertise"
       method="post">
 
     <input type="hidden"

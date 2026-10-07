@@ -77,6 +77,12 @@
         <input type="hidden"
                name="specialisteId"
                value="<%= s.getId() %>">
+        <input type="hidden"
+               name="consultationId"
+               value="<%= request.getAttribute("consultationId")%>">
+        <input type="hidden"
+               name="specialite"
+               value="<%= request.getAttribute("specialite")%>">
 
         <button type="submit">
             Voir les créneaux
