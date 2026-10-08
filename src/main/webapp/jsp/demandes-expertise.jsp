@@ -15,7 +15,7 @@
 <body>
 
 <h1>Demandes d'expertise</h1>
-<form action="${pageContext.request.contextPath}/demandes-expertise"
+<form action="/tele_expertise_war/demandes-expertise"
       method="get">
 
     <label>Priorité :</label>
@@ -102,6 +102,7 @@
         <th>Priorité</th>
         <th>Statut</th>
         <th>Date</th>
+        <th>Action</th>
     </tr>
 
     <%
@@ -138,6 +139,11 @@
 
         <td>
             <%= d.getDateCreation() %>
+        </td>
+        <td>
+            <a href="/tele_expertise_war/repondre-expertise?id=<%= d.getId() %>">
+                Répondre
+            </a>
         </td>
 
     </tr>

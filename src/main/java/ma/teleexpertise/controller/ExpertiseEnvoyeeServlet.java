@@ -13,8 +13,19 @@ import ma.teleexpertise.model.*;
 
 import java.io.IOException;
 
-@WebServlet("/envoyer-expertise")
+@WebServlet("/expertise-envoyee")
 public class ExpertiseEnvoyeeServlet extends HttpServlet {
+
+
+    @Override
+    protected void doGet(HttpServletRequest request,
+                         HttpServletResponse response)
+            throws ServletException, IOException {
+
+        request.getRequestDispatcher(
+                "/jsp/expertise-envoyee.jsp"
+        ).forward(request, response);
+    }
 
     @Override
     protected void doPost(HttpServletRequest request,

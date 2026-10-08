@@ -26,7 +26,6 @@
             <property name="jakarta.persistence.jdbc.password"
                       value="ME551234"/>
 
-            <!-- Hibernate -->
             <property name="hibernate.dialect"
                       value="org.hibernate.dialect.PostgreSQLDialect"/>
 
